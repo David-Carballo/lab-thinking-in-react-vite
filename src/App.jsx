@@ -1,9 +1,15 @@
+import { useState } from "react";
 import "./App.css";
+import ProductPage from "./components/ProductsPage";
 
 function App() {
+
+  const [darkTheme, setDarkTheme] = useState(false);
+
   return (
-    <div className="App">
-      <h1>React | Thinking in React</h1>
+    <div className={darkTheme? "App dark-theme" : "App"}>
+      <button id="theme-btn" onClick={()=>setDarkTheme(!darkTheme)}>🌙</button>
+      <ProductPage/>
     </div>
   );
 }
